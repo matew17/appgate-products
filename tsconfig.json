@@ -22,7 +22,8 @@
       "@env/*": ["src/environments/*"],
       "@components/*": ["src/app/shared/components/*"],
       "@directives/*": ["src/app/shared/directives/*"],
-      "@services/*": ["src/app/shared/services/*"]
+      "@services/*": ["src/app/shared/services/*"],
+      "@mocks/*": ["src/testing/mocks/*"]
     }
   },
   "angularCompilerOptions": {

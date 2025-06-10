@@ -1,6 +1,6 @@
 import { Directive, HostBinding, input } from '@angular/core';
 
-type ButtonTheme = 'primary' | 'secondary' | 'ghost';
+export type ButtonTheme = 'primary' | 'secondary' | 'ghost';
 
 @Directive({
   selector: '[appButton]',
