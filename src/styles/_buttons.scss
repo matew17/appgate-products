@@ -28,4 +28,12 @@
     cursor: not-allowed;
     transform: none;
   }
+
+  &--secondary {
+    background-color: vars.$text-color-secondary;
+
+    &:hover {
+      background-color: darken(vars.$text-color-secondary, 10%);
+    }
+  }
 }

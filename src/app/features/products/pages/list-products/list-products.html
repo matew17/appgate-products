@@ -1,0 +1,31 @@
+<section class="list-products-page">
+  <header class="header">
+    <h1>Product Management</h1>
+    <a appButton routerLink="new">Create New Product</a>
+  </header>
+
+  <div class="content">
+    @if (isLoading()) {
+    <div class="loading-container">
+      <app-spinner [size]="80"></app-spinner>
+    </div>
+    } @else if (error()) {
+    <div class="error-container">
+      <p>{{ error() }}</p>
+      <button appButton (click)="loadProducts()">Try Again</button>
+    </div>
+    } @else {
+    <div class="product-grid">
+      @for (product of products(); track product.id) {
+      <app-product-card
+        [product]="product"
+        (edit)="handleEdit($event)"
+        (delete)="handleDelete($event)"
+      />
+      } @empty {
+      <p>No products found.</p>
+      }
+    </div>
+    }
+  </div>
+</section>
