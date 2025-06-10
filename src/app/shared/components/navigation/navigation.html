@@ -1,0 +1,22 @@
+<nav class="main-nav">
+  <ul>
+    @for (item of navItems(); track item.url) {
+    <li>
+      <a
+        [routerLink]="item.url"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >{{ item.name }}</a
+      >
+    </li>
+    } @empty {
+    <li>
+      <a href="#">No items available</a>
+    </li>
+    }
+  </ul>
+
+  <div class="right-content">
+    <ng-content></ng-content>
+  </div>
+</nav>

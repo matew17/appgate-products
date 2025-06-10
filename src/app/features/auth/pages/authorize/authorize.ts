@@ -1,11 +1,12 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AuthService } from '@app/features/auth/services/auth';
+import { AuthService } from '@features/auth/services/auth';
+import { Spinner } from '@components/spinner/spinner';
 
 @Component({
   selector: 'app-authorize',
-  imports: [],
+  imports: [Spinner],
   templateUrl: './authorize.html',
   styleUrl: './authorize.scss',
 })

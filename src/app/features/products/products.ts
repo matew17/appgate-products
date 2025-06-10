@@ -1,6 +1,4 @@
-import { Component, inject } from '@angular/core';
-
-import { AuthService } from '@app/features/auth/services/auth';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-products',
@@ -8,11 +6,4 @@ import { AuthService } from '@app/features/auth/services/auth';
   templateUrl: './products.html',
   styleUrl: './products.scss',
 })
-export class Products {
-  authService = inject(AuthService);
-
-  logout() {
-    console.log('logout');
-    this.authService.logout();
-  }
-}
+export class Products {}

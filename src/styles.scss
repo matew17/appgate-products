@@ -1,6 +1,15 @@
+@use "buttons";
+@use "variables" as vars;
+
+html,
+* {
+  box-sizing: border-box;
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  font-family: vars.$font-family-base;
+  font-size: vars.$font-size-base;
 }

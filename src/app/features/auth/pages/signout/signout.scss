@@ -1,0 +1,34 @@
+@use "variables" as vars;
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100dvh;
+  background-color: vars.$background-color-body;
+  padding: 2rem;
+
+  .card {
+    background-color: vars.$background-color-card;
+    padding: 2.5rem 3rem;
+    border-radius: vars.$card-border-radius;
+    box-shadow: vars.$card-shadow;
+    text-align: center;
+    max-width: 450px;
+    width: 100%;
+  }
+
+  .title {
+    font-size: vars.$font-size-title;
+    font-weight: 600;
+    color: vars.$text-color-primary;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .text {
+    font-size: vars.$font-size-text;
+    color: vars.$text-color-secondary;
+    margin-bottom: 2rem;
+  }
+}

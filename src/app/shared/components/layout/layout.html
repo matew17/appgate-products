@@ -1,0 +1,11 @@
+@if(authService.isAuthenticated()) {
+<header>
+  <app-navigation [navItems]="mainNavItems">
+    <button appButton (click)="logout()">Sign Out</button>
+  </app-navigation>
+</header>
+}
+
+<main>
+  <ng-content></ng-content>
+</main>
