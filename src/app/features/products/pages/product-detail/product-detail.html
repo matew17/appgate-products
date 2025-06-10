@@ -1,0 +1,48 @@
+<div class="detail-page-container">
+  @if (isLoading()) {
+  <div class="loading-container">
+    <app-spinner [size]="80"></app-spinner>
+  </div>
+  } @else if (error()) {
+  <div class="error-container">
+    <h2>Something went wrong</h2>
+    <p>{{ error() }}</p>
+    <a appButton routerLink="/products">Back to List</a>
+  </div>
+  } @else if (product()) {
+  <a routerLink="/products" class="back-link">&larr; Back to Products</a>
+
+  <article class="product-detail-card">
+    <div class="product-image-container">
+      <img
+        class="product-image"
+        [src]="product()?.image"
+        [alt]="product()?.title"
+      />
+    </div>
+
+    <div class="product-info-container">
+      <header>
+        <p class="product-category">{{ product()?.category }}</p>
+        <h1 class="product-title">{{ product()?.title }}</h1>
+        <div class="product-rating">
+          <span>
+            ⭐ {{ product()?.rating?.rate }}/5 ({{ product()?.rating?.count }}
+            reviews)
+          </span>
+        </div>
+      </header>
+
+      <p class="product-description">{{ product()?.description }}</p>
+
+      <div class="product-price">{{ product()?.price | currency }}</div>
+
+      <footer *appHasRole="['admins']" class="product-actions">
+        <a appButton [routerLink]="['/products', product()?.id, 'edit']">
+          Edit Product
+        </a>
+      </footer>
+    </div>
+  </article>
+  }
+</div>

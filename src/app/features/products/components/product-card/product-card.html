@@ -1,14 +1,16 @@
 @if (product()) {
 <article class="product-card">
-  <header class="card-header">
-    <img class="card-image" [src]="product().image" [alt]="product().title" />
-  </header>
+  <a [routerLink]="['/products', product().id]" class="card-link">
+    <header class="card-header">
+      <img class="card-image" [src]="product().image" [alt]="product().title" />
+    </header>
 
-  <main class="card-content">
-    <h3 class="card-title">{{ product().title }}</h3>
-    <p class="card-category">{{ product().category }}</p>
-    <p class="card-price">{{ product().price | currency }}</p>
-  </main>
+    <main class="card-content">
+      <h3 class="card-title">{{ product().title }}</h3>
+      <p class="card-category">{{ product().category }}</p>
+      <p class="card-price">{{ product().price | currency }}</p>
+    </main>
+  </a>
 
   <footer *appHasRole="['admins']" class="card-actions">
     <button appButton [theme]="'secondary'" (click)="onEdit()">Edit</button>

@@ -48,7 +48,7 @@ export class ListProducts implements OnInit {
   }
 
   handleEdit(product: Product): void {
-    this.router.navigate(['/products', 'edit', product.id]);
+    this.router.navigate(['/products', product.id, 'edit']);
   }
 
   async handleDelete(product: Product): Promise<void> {

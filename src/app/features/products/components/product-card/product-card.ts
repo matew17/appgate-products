@@ -1,4 +1,5 @@
 import { Component, input, output } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 import { Button } from '@directives/button';
 import { Product } from '@features/products/models/product.interface';
@@ -7,7 +8,7 @@ import { HasRole } from '@directives/has-role';
 
 @Component({
   selector: 'app-product-card',
-  imports: [Button, CurrencyPipe, HasRole],
+  imports: [Button, CurrencyPipe, HasRole, RouterLink],
   templateUrl: './product-card.html',
   styleUrl: './product-card.scss',
 })

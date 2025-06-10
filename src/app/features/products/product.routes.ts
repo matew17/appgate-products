@@ -19,7 +19,15 @@ export const productRoutes: Routes = [
       ),
   },
   {
-    path: 'edit/:id',
+    path: ':id',
+    title: 'Product Detail',
+    loadComponent: () =>
+      import('./pages/product-detail/product-detail').then(
+        (c) => c.ProductDetail
+      ),
+  },
+  {
+    path: ':id/edit',
     title: 'Edit Product',
     canActivate: [rolesGuard],
     loadComponent: () =>

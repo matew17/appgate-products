@@ -12,4 +12,16 @@ body {
   padding: 0;
   font-family: vars.$font-family-base;
   font-size: vars.$font-size-base;
+
+  .back-link {
+    color: vars.$text-color-secondary;
+    text-decoration: none;
+    font-size: 0.9rem;
+    margin: 0 0 1rem 0;
+    display: block;
+
+    &:hover {
+      color: vars.$primary-color;
+    }
+  }
 }
