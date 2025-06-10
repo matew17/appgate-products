@@ -4,14 +4,14 @@ import { inject, Injectable } from '@angular/core';
 import { catchError, Observable, throwError } from 'rxjs';
 
 import { Product } from '@features/products/models/product.interface';
+import { environment } from '@env/environment';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
   private http = inject(HttpClient);
-
-  private readonly apiUrl = 'https://fakestoreapi.com/products';
+  private readonly apiUrl = `${environment.apiUrl}/products`;
 
   constructor() {}
 

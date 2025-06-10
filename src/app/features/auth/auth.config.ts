@@ -1,12 +1,16 @@
 import { LogLevel, PassedInitialConfig } from 'angular-auth-oidc-client';
 
+import { environment } from '@env/environment';
+
+const { authority, clientId, redirectUrl, postLogoutRedirectUri } =
+  environment.auth;
+
 export const authConfig: PassedInitialConfig = {
   config: {
-    authority:
-      'https://cognito-idp.us-east-2.amazonaws.com/us-east-2_g8ySth0Pt',
-    redirectUrl: window.location.origin + '/authorize',
-    postLogoutRedirectUri: window.location.origin + '/signout',
-    clientId: '2e5940k16kibouevvmjsa7e5dc',
+    authority,
+    clientId,
+    redirectUrl: window.location.origin + redirectUrl,
+    postLogoutRedirectUri: window.location.origin + postLogoutRedirectUri,
     scope: 'openid email',
     responseType: 'code',
     logLevel: LogLevel.Debug,

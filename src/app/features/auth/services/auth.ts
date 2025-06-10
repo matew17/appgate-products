@@ -3,6 +3,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 
 import { map, Observable } from 'rxjs';
 import { LoginResponse, OidcSecurityService } from 'angular-auth-oidc-client';
+import { environment } from '@env/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -44,7 +45,6 @@ export class AuthService {
       window.sessionStorage.clear();
     }
 
-    window.location.href =
-      'https://us-east-2g8ysth0pt.auth.us-east-2.amazoncognito.com/logout?client_id=2e5940k16kibouevvmjsa7e5dc&logout_uri=http://localhost:4200/signout';
+    window.location.href = `${environment.auth.logoutUrl}?client_id=${environment.auth.clientId}&logout_uri=${window.location.origin}/signout`;
   }
 }
