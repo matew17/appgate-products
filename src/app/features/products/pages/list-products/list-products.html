@@ -1,7 +1,9 @@
 <section class="list-products-page">
   <header class="header">
     <h1>Product Management</h1>
-    <a appButton routerLink="new">Create New Product</a>
+    <a appButton theme="secondary" [routerLink]="['/products', 'new']">
+      Create New Product
+    </a>
   </header>
 
   <div class="content">

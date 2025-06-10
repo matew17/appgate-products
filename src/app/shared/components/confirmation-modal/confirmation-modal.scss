@@ -1,0 +1,41 @@
+@use "variables" as vars;
+
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: vars.$background-color-card;
+  padding: 2rem;
+  border-radius: vars.$card-border-radius;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  max-width: 450px;
+  width: 90%;
+  text-align: center;
+}
+
+.modal-title {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.modal-message {
+  margin: 1rem 0 2rem 0;
+  color: vars.$text-color-secondary;
+  line-height: 1.5;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}

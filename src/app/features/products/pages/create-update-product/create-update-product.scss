@@ -1,0 +1,81 @@
+@use "variables" as vars;
+
+.form-container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: vars.$background-color-card;
+  border-radius: vars.$card-border-radius;
+  box-shadow: vars.$card-shadow;
+
+  .form-header {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid vars.$background-color-body;
+
+    h1 {
+      margin: 0.5rem 0 0 0;
+      font-size: 2rem;
+      font-weight: 600;
+    }
+  }
+
+  .back-link {
+    color: vars.$text-color-secondary;
+    text-decoration: none;
+    font-size: 0.9rem;
+
+    &:hover {
+      color: vars.$primary-color;
+    }
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+
+    label {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+    }
+
+    input,
+    textarea {
+      display: block;
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: vars.$button-border-radius;
+      font-size: 1rem;
+      transition: border-color 0.2s;
+
+      &:focus {
+        outline: none;
+        border-color: vars.$primary-color;
+      }
+    }
+
+    textarea {
+      resize: vertical;
+    }
+  }
+
+  .error-message {
+    color: #d9534f;
+    font-size: 0.8rem;
+    display: block;
+    margin-top: 0.25rem;
+  }
+
+  .form-actions {
+    text-align: right;
+    margin-top: 2rem;
+  }
+
+  .loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+  }
+}

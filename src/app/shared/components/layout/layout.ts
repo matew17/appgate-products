@@ -4,10 +4,11 @@ import { AuthService } from '@features/auth/services/auth';
 import { Button } from '@directives/button';
 import { Navigation } from '@components/navigation/navigation';
 import { NavItem } from '@components/navigation/navitem.interface';
+import { Profile } from '@components/profile/profile';
 
 @Component({
   selector: 'app-layout',
-  imports: [Navigation, Button],
+  imports: [Navigation, Button, Profile],
   templateUrl: './layout.html',
   styleUrl: './layout.scss',
 })

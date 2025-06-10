@@ -1,7 +1,10 @@
 @if(authService.isAuthenticated()) {
 <header>
   <app-navigation [navItems]="mainNavItems">
-    <button appButton (click)="logout()">Sign Out</button>
+    <div class="profile-container">
+      <app-profile></app-profile>
+      <button appButton (click)="logout()">Sign Out</button>
+    </div>
   </app-navigation>
 </header>
 }

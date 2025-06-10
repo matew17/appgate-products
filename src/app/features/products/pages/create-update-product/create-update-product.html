@@ -1,1 +1,74 @@
-<p>create-update-product works!</p>
+<div class="form-container">
+  <header class="form-header">
+    <a routerLink="/products" class="back-link">&larr; Back to Products</a>
+    <h1>{{ mode() === 'create' ? 'Create New Product' : 'Edit Product' }}</h1>
+  </header>
+
+  @if (isLoading()) {
+  <div class="loading-container">
+    <app-spinner [size]="80"></app-spinner>
+  </div>
+  } @else {
+  <form [formGroup]="productForm" (ngSubmit)="onSubmit()" novalidate>
+    <div class="form-group">
+      <label for="title">Product Title</label>
+      <input id="title" type="text" formControlName="title" />
+
+      @if (productForm.get('title')?.invalid &&
+      productForm.get('title')?.touched) {
+      <small class="error-message">Title is required (min 3 chars).</small>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="price">Price</label>
+      <input id="price" type="number" formControlName="price" />
+      @if (productForm.get('price')?.invalid &&
+      productForm.get('price')?.touched) {
+      <small class="error-message">Price must be a positive number.</small>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea
+        id="description"
+        formControlName="description"
+        rows="4"
+      ></textarea>
+      @if (productForm.get('description')?.invalid &&
+      productForm.get('description')?.touched) {
+      <small class="error-message">
+        Description is required (min 10 chars).
+      </small>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="category">Category</label>
+      <input id="category" type="text" formControlName="category" />
+      @if (productForm.get('category')?.invalid &&
+      productForm.get('category')?.touched) {
+      <small class="error-message">Category is required.</small>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="image">Image URL</label>
+      <input id="image" type="text" formControlName="image" />
+      @if (productForm.get('image')?.invalid &&
+      productForm.get('image')?.touched) {
+      <small class="error-message">
+        Image is required (Enter a valid URL).
+      </small>
+      }
+    </div>
+
+    <div class="form-actions">
+      <button appButton type="submit" [disabled]="isLoading()">
+        {{ mode() === 'create' ? 'Create Product' : 'Update Product' }}
+      </button>
+    </div>
+  </form>
+  }
+</div>

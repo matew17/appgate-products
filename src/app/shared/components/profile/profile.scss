@@ -1,0 +1,8 @@
+@use "variables" as vars;
+
+.profile-greeting {
+  display: flex;
+  align-items: center;
+  color: vars.$text-color-secondary;
+  font-weight: 500;
+}
