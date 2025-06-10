@@ -1,7 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { AuthService } from '@features/auth/services/auth';
+import { AuthService } from '@app/features/auth/services/auth/auth';
 import { Spinner } from '@components/spinner/spinner';
 
 @Component({

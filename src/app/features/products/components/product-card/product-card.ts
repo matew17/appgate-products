@@ -3,10 +3,11 @@ import { Component, input, output } from '@angular/core';
 import { Button } from '@directives/button';
 import { Product } from '@features/products/models/product.interface';
 import { CurrencyPipe } from '@angular/common';
+import { HasRole } from '@directives/has-role';
 
 @Component({
   selector: 'app-product-card',
-  imports: [Button, CurrencyPipe],
+  imports: [Button, CurrencyPipe, HasRole],
   templateUrl: './product-card.html',
   styleUrl: './product-card.scss',
 })

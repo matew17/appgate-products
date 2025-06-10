@@ -1,5 +1,5 @@
 import { Component, computed, inject } from '@angular/core';
-import { AuthService } from '@features/auth/services/auth';
+import { AuthService } from '@app/features/auth/services/auth/auth';
 
 @Component({
   selector: 'app-profile',
@@ -13,6 +13,6 @@ export class Profile {
   public email = computed(() => {
     const user = this.authService.userData();
 
-    return user?.userData.email;
+    return user?.userData?.email ?? '';
   });
 }

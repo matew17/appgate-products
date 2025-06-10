@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { Button } from '@directives/button';
-import { AuthService } from '@features/auth/services/auth';
+import { AuthService } from '@app/features/auth/services/auth/auth';
 
 @Component({
   selector: 'app-signout',

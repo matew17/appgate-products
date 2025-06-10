@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 
-import { AuthService } from '@features/auth/services/auth';
+import { AuthService } from '@app/features/auth/services/auth/auth';
 import { Button } from '@directives/button';
 import { Navigation } from '@components/navigation/navigation';
 import { NavItem } from '@components/navigation/navitem.interface';

@@ -10,8 +10,9 @@
     <p class="card-price">{{ product().price | currency }}</p>
   </main>
 
-  <footer class="card-actions">
+  <footer *appHasRole="['admins']" class="card-actions">
     <button appButton [theme]="'secondary'" (click)="onEdit()">Edit</button>
+
     <button appButton [theme]="'primary'" (click)="onDelete()">Delete</button>
   </footer>
 </article>

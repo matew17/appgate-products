@@ -1,7 +1,12 @@
 <section class="list-products-page">
   <header class="header">
     <h1>Product Management</h1>
-    <a appButton theme="secondary" [routerLink]="['/products', 'new']">
+    <a
+      *appHasRole="['admins']"
+      appButton
+      theme="secondary"
+      [routerLink]="['/products', 'new']"
+    >
       Create New Product
     </a>
   </header>

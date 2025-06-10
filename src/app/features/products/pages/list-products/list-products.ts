@@ -9,10 +9,11 @@ import { Product } from '@features/products/models/product.interface';
 import { ProductCard } from '@features/products/components/product-card/product-card';
 import { ProductService } from '@features/products/services/product';
 import { Spinner } from '@components/spinner/spinner';
+import { HasRole } from '@directives/has-role';
 
 @Component({
   selector: 'app-list-products',
-  imports: [Spinner, Button, ProductCard, RouterLink],
+  imports: [Spinner, Button, ProductCard, RouterLink, HasRole],
   templateUrl: './list-products.html',
   styleUrl: './list-products.scss',
 })
