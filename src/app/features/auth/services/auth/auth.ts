@@ -1,17 +1,18 @@
 import { inject, Injectable, computed } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 
-import { jwtDecode } from 'jwt-decode';
 import { map, Observable } from 'rxjs';
 
 import { LoginResponse, OidcSecurityService } from 'angular-auth-oidc-client';
 import { environment } from '@env/environment';
 import { DecodedIdToken } from './decoded-token.interface';
+import { JwtDecoder } from '@services/jwt-decoder';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
+  private readonly jwtDecoder = inject(JwtDecoder);
   private readonly oidcSecurityService = inject(OidcSecurityService);
 
   private isAuthenticatedState = toSignal(
@@ -56,7 +57,7 @@ export class AuthService {
           return null;
         }
 
-        const decodedToken = jwtDecode<DecodedIdToken>(token);
+        const decodedToken = this.jwtDecoder.decode<DecodedIdToken>(token);
 
         return decodedToken?.['cognito:groups'] || [];
       })

@@ -23,7 +23,8 @@
       "@components/*": ["src/app/shared/components/*"],
       "@directives/*": ["src/app/shared/directives/*"],
       "@services/*": ["src/app/shared/services/*"],
-      "@mocks/*": ["src/testing/mocks/*"]
+      "@mocks/*": ["src/testing/mocks/*"],
+      "@testing/*": ["src/testing/*"]
     }
   },
   "angularCompilerOptions": {
