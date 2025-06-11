@@ -1,9 +1,9 @@
 name: Angular Unit Tests
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   test:
@@ -21,11 +21,34 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v4
         with:
-          node-version: '22.x'
-          cache: 'pnpm'
+          node-version: "22.x"
+          cache: "pnpm"
 
       - name: Install dependencies
         run: pnpm install
 
       - name: Run unit tests
-        run: pnpm test -- --watch=false --browsers=ChromeHeadless
+        run: pnpm test --watch=false --browsers=ChromeHeadless
+  build:
+    name: Run Angular Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v3
+        with:
+          version: 10
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22.x"
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build angular app
+        run: pnpm run build
